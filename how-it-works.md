@@ -49,3 +49,22 @@ Prueba modelos adicionales de Hugging Face como:
 ```bash
 pip3 install transformers[onnxruntime]
 ```
+
+## c. Integración y síntesis de voz: app.py
+Este módulo conecta todo el flujo y convierte las respuestas generadas a voz utilizando gTTS.
+
+### Cómo funciona:
+1. Captura texto hablado con recognize_speech() desde recognition.py.
+2. Genera una respuesta con generate_response() desde model.py.
+3. Convierte el texto de la respuesta a voz con gTTS y lo reproduce.
+
+### Cómo depurar:
+Si no se reproduce el archivo de audio, instala mpg321:
+```bash
+sudo apt install mpg321
+```
+Si la voz es muy rápida o lenta, ajusta la velocidad en gTTS:
+```python
+tts = gTTS(text=text, lang='es', slow=True)
+```
+ 
