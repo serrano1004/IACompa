@@ -7,7 +7,7 @@ def recognize_speech():
     # Usar el micrófono como fuente
     with sr.Microphone() as source:
         print("Por favor, habla ahora...")
-        
+        recognizer.adjust_for_ambient_noise(source)  # Ajusta para ruidos ambientales
         try:
             # Escuchar el audio del usuario
             audio = recognizer.listen(source)
