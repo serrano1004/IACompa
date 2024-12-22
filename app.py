@@ -1,16 +1,11 @@
 from recognition import recognize_speech
 from model import load_model, generate_response
+from utils.tts import text_to_speech  # Módulo auxiliar para convertir texto a voz
 from gtts import gTTS
 import os
 
 # Inicializar el modelo
 model, tokenizer = load_model()
-
-def text_to_speech(text):
-    # Convertir texto a voz con Google TTS
-    tts = gTTS(text=text, lang='es')
-    tts.save("response.mp3")
-    os.system("mpg321 response.mp3")  # Reproducir el archivo de audio
 
 def main():
     print("Iniciando aplicación...")
