@@ -18,8 +18,34 @@ pip3 install pyaudio
 ```bash
 arecord -l
 ```
-Si no entiende el audio, asegúrate de hablar claro y que el micrófono funcione correctamente. Puedes guardar el audio para verificar:
+- Si no entiende el audio, asegúrate de hablar claro y que el micrófono funcione correctamente. Puedes guardar el audio para verificar:
 ```python
 with open("audio.wav", "wb") as f:
     f.write(audio.get_wav_data())
+```
+
+## b.Generación de texto: model.py
+Este módulo utiliza el modelo de lenguaje bloomz de Hugging Face para generar respuestas.
+
+###Cómo funciona:
+Carga del modelo:
+```python
+model, tokenizer = load_model()
+```
+AutoTokenizer convierte el texto de entrada en tensores (valores numéricos).
+AutoModelForCausalLM genera texto en base al tensor.
+Generación de respuesta:
+```python
+outputs = model.generate(inputs["input_ids"], max_length=100)
+```
+Controlas el largo de la respuesta con max_length y puedes ajustar parámetros como:
+- temperature: Controla la creatividad (valores entre 0.7-1.5 son útiles).
+- top_p: Reduce palabras poco probables (valores cercanos a 0.9).
+## Cómo optimizar:
+Prueba modelos adicionales de Hugging Face como:
+- Davlan/xlm-roberta-large-es-ner (enfocado en español).
+- facebook/blenderbot-400M-distill (más general).
+- Si tu hardware es limitado, usa versiones más ligeras. Por ejemplo:
+```bash
+pip3 install transformers[onnxruntime]
 ```
