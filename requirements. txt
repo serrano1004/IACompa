@@ -2,3 +2,5 @@ speechrecognition
 gtts
 torch
 transformers
+requests  # Si usas la búsqueda web
+mpg321
