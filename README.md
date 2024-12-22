@@ -6,7 +6,7 @@ Ejecuta los siguientes comandos para instalar todas las librerías necesarias:
 ```bash
 sudo apt update
 sudo apt install python3-pip portaudio19-dev mpg321 -y
-pip3 install speechrecognition gtts torch transformers
+pip3 install -r requirements.txt
 ```
 ### 2. Pruebas individuales de los módulos
 Ejecuta los archivos por separado para probar:
