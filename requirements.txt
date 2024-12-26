@@ -1,6 +1,7 @@
-speechrecognition
-gtts
-torch
+SpeechRecognition
+pyaudio
 transformers
+torch
+gtts
 requests  # Si usas la búsqueda web
-mpg321
+mpg123
