@@ -1,7 +1,7 @@
 import requests
 
 def search_google(query):
-    api_key = 'tu_api_key'  # Reemplaza con tu API key real
+    api_key = 'api-key'  # Reemplaza con tu API key real
     search_engine_id = 'tu_search_engine_id'  # Reemplaza con tu ID de motor de búsqueda
     url = f"https://www.googleapis.com/customsearch/v1?q={query}&key={api_key}&cx={search_engine_id}"
     try:
