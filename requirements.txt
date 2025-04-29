@@ -1,0 +1,9 @@
+SpeechRecognition
+pyaudio
+transformers
+torch
+gtts
+requests  # Si usas la búsqueda web
+mpg123
+playsound
+flask
