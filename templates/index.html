@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asistente para Mayores</title>
+</head>
+<body>
+    <h1>Habla con el Asistente</h1>
+    <form method="POST">
+        <input type="text" name="user_input">
+        <button type="submit">Enviar</button>
+    </form>
+    {% if response %}
+        <p>Respuesta: {{ response }}</p>
+    {% endif %}
+</body>
+</html>
